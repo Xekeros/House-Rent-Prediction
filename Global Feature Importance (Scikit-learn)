@@ -1,0 +1,26 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.ensemble import RandomForestRegressor
+import joblib
+
+# Load your data
+X_train = pd.read_csv("X_train.csv")
+y_train = pd.read_csv("y_train.csv")
+
+# Train the model (or load if already saved)
+model = RandomForestRegressor(n_estimators=100, random_state=42)
+model.fit(X_train, y_train.values.ravel())
+
+# Get feature importances
+importances = model.feature_importances_
+features = X_train.columns
+indices = importances.argsort()[::-1]
+
+# Plot
+plt.figure(figsize=(10, 6))
+plt.title("Feature Importance (Global)")
+plt.bar(range(X_train.shape[1]), importances[indices], align="center")
+plt.xticks(range(X_train.shape[1]), features[indices], rotation=90)
+plt.tight_layout()
+plt.savefig("global_feature_importance.png")
+plt.show()
