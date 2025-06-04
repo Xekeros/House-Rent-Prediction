@@ -1,35 +1,33 @@
-
-
 # 🏠 House Rent Prediction
 
-Bu proje, Türkiye'deki ev kiraları üzerine yapılan bir veri bilimi çalışmasıdır. Amacımız, emlak verilerine dayalı olarak kira bedellerini tahmin eden bir regresyon modeli geliştirmek ve bu tahminleri kategorilere ayırarak sınıflandırma analizi yapmaktır.
+This project is a data science study on house rents in Turkey. Our goal is to develop a regression model that predicts rental prices based on real estate data and to analyze these predictions by categorizing them for classification analysis.
 
 ---
 
-## 🎯 Proje Amacı
+## 🎯 Project Objective
 
-Ev kiraları; lokasyon, oda sayısı, metrekare gibi birçok faktörden etkilenir. Bu projede:
-- Ev kiralarını tahmin eden bir regresyon modeli geliştirildi.
-- Tahminler kategorilere ayrılarak (Low, Medium, High) sınıflandırma sonuçları da analiz edildi.
+House rents are affected by many factors such as location, number of rooms, and square meters. In this project:
+- A regression model was developed to predict house rents.
+- Predictions were categorized (Low, Medium, High) and classification results were also analyzed.
 
 ---
 
-## 📁 Proje Yapısı
+## 📁 Project Structure
 
 ```
 project/
 │
-├── model_finisher_personB.py     # Model eğitimi, tahmin ve değerlendirme
-├── X_train.csv                   # Eğitim verisi (özellikler)
-├── X_test.csv                    # Test verisi (özellikler)
-├── y_train.csv                   # Eğitim verisi (kira)
-├── y_test.csv                    # Test verisi (kira)
-└── README.md                     # Açıklayıcı dosya
+├── model_finisher_personB.py     # Model training, prediction, and evaluation
+├── X_train.csv                   # Training data (features)
+├── X_test.csv                    # Test data (features)
+├── y_train.csv                   # Training data (rent)
+├── y_test.csv                    # Test data (rent)
+└── README.md                     # Documentation
 ```
 
 ---
 
-## ⚙️ Kullanılan Teknolojiler
+## ⚙️ Technologies Used
 
 - Python 3
 - [scikit-learn](https://scikit-learn.org)
@@ -39,11 +37,11 @@ project/
 
 ---
 
-## 🧠 Model Bilgisi
+## 🧠 Model Information
 
 Model: `RandomForestRegressor`
 
-Kullanılan parametreler:
+Parameters used:
 - `n_estimators=200`
 - `max_depth=10`
 - `min_samples_split=2`
@@ -53,15 +51,15 @@ Kullanılan parametreler:
 
 ---
 
-## 🚀 Nasıl Çalıştırılır?
+## 🚀 How to Run
 
-1. Gerekli bağımlılıkları kur:
+1. Install the required dependencies:
 
 ```bash
 pip install pandas numpy scikit-learn matplotlib seaborn
 ```
 
-2. Dosyaların bulunduğu dizinde çalıştır:
+2. Run in the directory containing the files:
 
 ```bash
 python model_finisher_personB.py
@@ -69,34 +67,34 @@ python model_finisher_personB.py
 
 ---
 
-## 📊 Çıktılar
+## 📊 Outputs
 
-### 📈 Regresyon Metrikleri
-- MAE (Ortalama Mutlak Hata)
-- MSE (Ortalama Kare Hata)
-- RMSE (Karekök Ortalama Hata)
-- R² Score (Doğruluk)
+### 📈 Regression Metrics
+- MAE (Mean Absolute Error)
+- MSE (Mean Squared Error)
+- RMSE (Root Mean Squared Error)
+- R² Score
 
-### 🧮 Sınıflandırma
-- Kiralar şu sınıflara bölünür:
+### 🧮 Classification
+- Rents are divided into the following classes:
   - **Low**: 0 - 10,000
   - **Medium**: 10,000 - 30,000
   - **High**: 30,000+
 
-- Sınıflandırma performansı `classification_report` ile değerlendirilir.
+- Classification performance is evaluated with `classification_report`.
 
-- Ayrıca **confusion matrix** (karmaşıklık matrisi) aşağıdaki gibi görselleştirilir:
+- Additionally, the **confusion matrix** is visualized as follows:
 
-### 🔍 Örnek Confusion Matrix
+### 🔍 Example Confusion Matrix
 
-> Bu görsel çalışma tamamlandığında oluşur:
+> This image is generated after running the script:
 
 ![Confusion Matrix](confusion_matrix_example.png)
 
-> Not: Yukarıdaki görselin oluşturulabilmesi için betik çalıştırıldıktan sonra `.png` olarak kaydedilmesi gerekir.
+> Note: To generate the above image, the script must be run and the plot saved as `.png`.
 
 ---
 
-## 📬 Katkı ve İletişim
+## 📬 Contribution & Contact
 
-Bu proje, **CMPE 442 - Machine Learning** dersi kapsamında geliştirilmiştir. Geliştiriciye ulaşmak için GitHub üzerinden iletişime geçebilirsiniz.
+This project was developed for the **CMPE 442 - Machine Learning** course. You can contact the developer via GitHub.
